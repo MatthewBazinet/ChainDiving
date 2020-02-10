@@ -6,6 +6,7 @@
 #include "Body.h"
 #include "Ball.h"
 #include <SDL.h>
+#include "GameManager.h"
 
 using namespace MATH;
 class Scene0 : public Scene {
@@ -18,6 +19,7 @@ private:
 	Matrix4 projection;
 	float timePassed;
 	Collider* umer;
+	GameManager *gameManager;
 	
 
 	

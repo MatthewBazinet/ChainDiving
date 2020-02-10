@@ -18,6 +18,7 @@ public:
 	void Render(SDL_Surface* screenSurface_, Matrix4 projection);
 	~Ball();
 	
+	
 private:
 	SDL_Surface* ballImage;
 	SDL_Surface* screenSurface;

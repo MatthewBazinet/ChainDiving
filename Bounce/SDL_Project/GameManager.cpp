@@ -10,6 +10,8 @@ GameManager::GameManager() {
 	timer = nullptr;
 	isRunning = true;
 	currentScene = nullptr;
+
+	mInputMgr = InputManager::Instance();
 }
 
 
@@ -56,6 +58,13 @@ bool GameManager::OnCreate() {
 void GameManager::Run() {
 	timer->Start();
 	while (isRunning) {
+		mInputMgr->Update();
+
+		if (mInputMgr->KeyDown(SDL_SCANCODE_W)) {
+			ball.ApplyForce(Vec3(0.0f, 100.0f, 0.0f) * timer->GetDeltaTime());
+			printf("W Key Pressed \n");
+		}
+
 		timer->UpdateFrameTicks();
 		currentScene->Update(timer->GetDeltaTime());
 		currentScene->Render();
@@ -79,7 +88,10 @@ void GameManager::handleEvents() {
 	}
 }
 
-GameManager::~GameManager() {}
+GameManager::~GameManager() {
+	//InputManager::Release();
+	//mInputMgr = NULL;
+}
 
 void GameManager::OnDestroy(){
 	if (ptr) delete ptr;

@@ -2,6 +2,8 @@
 #define GAMEMANAGER_H
 #include <SDL.h>
 #include "Scene.h"
+#include "InputManager.h"
+#include "Ball.h"
 
 class GameManager {
 private:
@@ -18,6 +20,10 @@ private:
 	class Timer *timer;
 	bool isRunning;
 	Scene *currentScene;
+	SDL_Event mEvents;
+
+	InputManager* mInputMgr;
+	Ball ball;
 
 public:
 	GameManager();

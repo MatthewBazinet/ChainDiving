@@ -48,8 +48,8 @@ void Body::Update(const float deltaTime, float timePassed)
 	pos.z += vel.z * deltaTime + 0.5f * accel.z * deltaTime * deltaTime;
 	vel.z += accel.z * deltaTime;
 
-	if (pos.y < 4 && !bouncedY) {
-		vel =Vec3(vel.x, vel.y * -0.99, 0.0f);
+	if (pos.y < 4.0f && !bouncedY) {
+		vel =Vec3(vel.x, vel.y * -0.99f, 0.0f);
 		bouncedY = true;
 		hitTimeY = timePassed;
 	}
@@ -57,8 +57,8 @@ void Body::Update(const float deltaTime, float timePassed)
 		bouncedY = false;
 	}
 
-	if ((pos.x < 4.2 || pos.x > 45.8) && !bouncedX) {
-		vel = Vec3(vel.x * -0.99, vel.y, 0.0f);
+	if ((pos.x < 4.2f || pos.x > 45.8f) && !bouncedX) {
+		vel = Vec3(vel.x * -0.99f, vel.y, 0.0f);
 		bouncedX = true;
 		hitTimeX = timePassed;
 	}
