@@ -17,6 +17,8 @@
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MMath.cpp" />
+    <ClCompile Include="Platform.cpp" />
+    <ClCompile Include="PlayerController.cpp" />
     <ClCompile Include="Scene0.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="VMath.cpp" />
@@ -30,6 +32,8 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="MMath.h" />
+    <ClInclude Include="Platform.h" />
+    <ClInclude Include="PlayerController.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Scene0.h" />
     <ClInclude Include="Timer.h" />

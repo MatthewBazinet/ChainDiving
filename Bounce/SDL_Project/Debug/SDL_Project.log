@@ -1,1 +1,4 @@
-﻿
+﻿  Platform.cpp
+C:\Users\matth\Downloads\ChainDiving-Ricky-s-Changes-V1 (1)\ChainDiving-Ricky-s-Changes-V1\Bounce\SDL_Project\Platform.cpp(46,21): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\matth\Downloads\ChainDiving-Ricky-s-Changes-V1 (1)\ChainDiving-Ricky-s-Changes-V1\Bounce\SDL_Project\Platform.cpp(47,22): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
+  SDL_Project.vcxproj -> C:\Users\matth\Downloads\ChainDiving-Ricky-s-Changes-V1 (1)\ChainDiving-Ricky-s-Changes-V1\Bounce\Debug\SDL_Project.exe
