@@ -23,7 +23,7 @@ private:
 	SDL_Event mEvents;
 
 	InputManager* mInputMgr;
-	Ball ball;
+	Ball* ball[5]; //If I use a pointer it will cause a crash. The reason maybe is because of null in the accel
 
 public:
 	GameManager();

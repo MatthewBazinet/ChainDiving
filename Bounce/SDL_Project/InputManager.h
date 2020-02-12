@@ -15,6 +15,7 @@ public:
 	static InputManager* Instance();
 	//static void Release();
 	bool KeyDown(SDL_Scancode scanCode);
+	bool KeyUp(SDL_Scancode scanCode);
 	void Update();
 
 	InputManager();

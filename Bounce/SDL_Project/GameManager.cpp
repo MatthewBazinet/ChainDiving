@@ -58,12 +58,16 @@ bool GameManager::OnCreate() {
 void GameManager::Run() {
 	timer->Start();
 	while (isRunning) {
-		mInputMgr->Update();
+		/*mInputMgr->Update();
 
 		if (mInputMgr->KeyDown(SDL_SCANCODE_W)) {
-			ball.ApplyForce(Vec3(0.0f, 100.0f, 0.0f) * timer->GetDeltaTime());
+			//ball.ApplyForce(Vec3(0.0f, 100.0f, 0.0f) * timer->GetDeltaTime());
 			printf("W Key Pressed \n");
 		}
+
+		if (mInputMgr->KeyUp(SDL_SCANCODE_W)) {
+			printf("W Key Released \n");
+		}*/
 
 		timer->UpdateFrameTicks();
 		currentScene->Update(timer->GetDeltaTime());
@@ -78,7 +82,47 @@ void GameManager::Run() {
 void GameManager::handleEvents() {
 	SDL_Event sdlEvent;
 	while (SDL_PollEvent(&sdlEvent)) {
-		printf("%d\n", sdlEvent.type);
+		switch (sdlEvent.type) {
+			case SDL_KEYDOWN:
+				switch (sdlEvent.key.keysym.sym) {
+					case SDLK_w:
+						ball[0]->ApplyForce(Vec3(0.0f, 5.0f, 0.0f));
+						printf("W Key Pressed \n");
+						break;
+					case SDLK_d:
+						ball[0]->ApplyForce(Vec3(5.0f, 0.0f, 0.0f));
+						printf("D Key Pressed \n");
+						break;
+					case SDLK_RIGHT:
+						ball[1]->ApplyForce(Vec3(5.0f, 0.0f, 0.0f));
+						printf("Right Aroow Key Pressed \n");
+						break;
+					default:
+						break;
+				}
+				break;
+				
+			case SDL_KEYUP:
+				switch (sdlEvent.key.keysym.sym)
+				{
+					case SDLK_w:
+						ball[0]->ApplyForce(Vec3(0.0f, 0.0f, 0.0f));
+						printf("W Key Released \n");
+						break;
+					case SDLK_d:
+						ball[0]->ApplyForce(Vec3(0.0f, 0.0f, 0.0f));
+						printf("D Key Released \n");
+						break;
+					case SDLK_RIGHT:
+						ball[1]->ApplyForce(Vec3(5.0f, 0.0f, 0.0f));
+						printf("Right Aroow Key Released \n");
+						break;
+					default:
+						break;
+				}
+				break;
+		}
+		//printf("%d\n", sdlEvent.type);
 		if (sdlEvent.type == SDL_QUIT) {
 			isRunning = false;
 		}

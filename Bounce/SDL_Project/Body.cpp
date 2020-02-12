@@ -28,7 +28,7 @@ Body::~Body()
 
 void Body::Update(const float deltaTime)
 {
-	printf("%f %f %f\n", pos.x, vel.x, accel.x);
+	//printf("%f %f %f\n", pos.x, vel.x, accel.x);
 	pos.x += vel.x * deltaTime + 0.5f * accel.x * deltaTime * deltaTime;
 	vel.x += accel.x * deltaTime;
 	pos.y += vel.y * deltaTime + 0.5f * accel.y * deltaTime * deltaTime;
@@ -40,7 +40,7 @@ void Body::Update(const float deltaTime)
 
 void Body::Update(const float deltaTime, float timePassed)
 {
-	printf("%f %f %f\n", pos.x, vel.x, accel.x);
+	//printf("%f %f %f\n", pos.x, vel.x, accel.x);
 	pos.x += vel.x * deltaTime + 0.5f * accel.x * deltaTime * deltaTime;
 	vel.x += accel.x * deltaTime;
 	pos.y += vel.y * deltaTime + 0.5f * accel.y * deltaTime * deltaTime;
