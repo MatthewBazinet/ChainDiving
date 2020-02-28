@@ -83,51 +83,14 @@ void GameManager::handleEvents() {
 	SDL_Event sdlEvent;
 	while (SDL_PollEvent(&sdlEvent)) {
 		switch (sdlEvent.type) {
-			case SDL_KEYDOWN:
-				switch (sdlEvent.key.keysym.sym) {
-					case SDLK_w:
-						ball[0]->ApplyForce(Vec3(0.0f, 5.0f, 0.0f));
-						printf("W Key Pressed \n");
-						break;
-					case SDLK_d:
-						ball[0]->ApplyForce(Vec3(5.0f, 0.0f, 0.0f));
-						printf("D Key Pressed \n");
-						break;
-					case SDLK_RIGHT:
-						ball[1]->ApplyForce(Vec3(5.0f, 0.0f, 0.0f));
-						printf("Right Aroow Key Pressed \n");
-						break;
-					default:
-						break;
-				}
-				break;
-				
-			case SDL_KEYUP:
-				switch (sdlEvent.key.keysym.sym)
-				{
-					case SDLK_w:
-						ball[0]->ApplyForce(Vec3(0.0f, 0.0f, 0.0f));
-						printf("W Key Released \n");
-						break;
-					case SDLK_d:
-						ball[0]->ApplyForce(Vec3(0.0f, 0.0f, 0.0f));
-						printf("D Key Released \n");
-						break;
-					case SDLK_RIGHT:
-						ball[1]->ApplyForce(Vec3(5.0f, 0.0f, 0.0f));
-						printf("Right Aroow Key Released \n");
-						break;
-					default:
-						break;
-				}
-				break;
-		}
-		//printf("%d\n", sdlEvent.type);
-		if (sdlEvent.type == SDL_QUIT) {
-			isRunning = false;
-		}
-		else {
-			//currentScene->handleEvents(sdlEvent);
+
+			//printf("%d\n", sdlEvent.type);
+			if (sdlEvent.type == SDL_QUIT) {
+				isRunning = false;
+			}
+			else {
+				//currentScene->handleEvents(sdlEvent);
+			}
 		}
 	}
 }

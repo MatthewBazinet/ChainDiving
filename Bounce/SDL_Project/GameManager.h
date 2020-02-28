@@ -4,6 +4,7 @@
 #include "Scene.h"
 #include "InputManager.h"
 #include "Ball.h"
+#include "Scene0.h"
 
 class GameManager {
 private:
@@ -23,7 +24,7 @@ private:
 	SDL_Event mEvents;
 
 	InputManager* mInputMgr;
-	Ball* ball[5]; //If I use a pointer it will cause a crash. The reason maybe is because of null in the accel
+	Ball* ball[5]; //If I use a pointer it will cause a crash. 
 
 public:
 	GameManager();

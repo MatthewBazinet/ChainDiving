@@ -19,7 +19,7 @@ private:
 	Matrix4 projection;
 	float timePassed;
 	Collider* umer;
-	GameManager *gameManager;
+	//GameManager *gameManager;
 	
 
 	
