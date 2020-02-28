@@ -23,7 +23,7 @@ bool Scene0::OnCreate() {
 
 	ballImage = IMG_Load("ball.png");
 
-    ball[0] = new Ball(Vec3(10.0f, 100.0f, 0.0f), Vec3(10.0f, 0.0f, 0.0f), Vec3(0.0f, -9.8f, 0.0f), 20.0f, 4.8f, ballImage);
+    ball[0] = new Ball(Vec3(10.0f, 100.0f, 0.0f), Vec3(0.0f, 0.0f, 0.0f), Vec3(0.0f, -9.8f, 0.0f), 20.0f, 4.8f, ballImage);
 	ball[1] = new Ball(Vec3(20.0f, 50.0f, 0.0f), Vec3(5.0f, 0.0f, 0.0f), Vec3(0.0f, -9.8f, 0.0f), 20.0f, 4.8f, ballImage);
 	ball[2] = new Ball(Vec3(30.0f, 25.0f, 0.0f), Vec3(-1.0f, 0.0f, 0.0f), Vec3(0.0f, -9.8f, 0.0f), 20.0f, 4.8f, ballImage);
 	ball[3] = new Ball(Vec3(30.0f, 100.0f, 0.0f), Vec3(2.0f, 0.0f, 0.0f), Vec3(0.0f, -9.8f, 0.0f), 20.0f, 4.8f, ballImage);
@@ -53,14 +53,14 @@ void Scene0::Update(const float time) {
 			if (i != j) {
 				if (Collider::SphereSphereCollision(ball[i], ball[j])) {
 					Collider::SphereSphereCollisionResponse(ball[i], ball[j]);
-				}
-				if (Collider::SphereBoxCollision(platforms[0], ball[i])) {
-					Collider::SphereBoxCollisionResponse(platforms[0], ball[i]);
-				}
+				}	
 			}
 		}
 	}
 	for (int i = 0; i < 5; i++) {
+		if (Collider::SphereBoxCollision(platforms[0], ball[i])) {
+			Collider::SphereBoxCollisionResponse(platforms[0], ball[i]);
+		}
 	ball[i]->Update(time, timePassed);
 	}
 	timePassed += time;

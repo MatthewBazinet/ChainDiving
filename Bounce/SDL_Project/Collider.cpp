@@ -56,15 +56,18 @@ bool Collider::SphereBoxCollision(const Platform* rect, const Body* body)
 
 void Collider::SphereBoxCollisionResponse(Platform* rect, Body* body)
 {
-	float e = 0.99f;
-	Vec3 lineOfAction = body->pos - rect->pos;
-	Vec3 normalizedLineOfAction = lineOfAction / (sqrt(lineOfAction.x * lineOfAction.x + lineOfAction.y * lineOfAction.y + lineOfAction.z * lineOfAction.z));
-	float v1p = VMath::dot(normalizedLineOfAction, body->vel);
-	float v2p = VMath::dot(normalizedLineOfAction, rect->vel);
+	Vec3 up = Vec3(0.0f, 1.0f, 0.0f);
+	float updot = VMath::dot(up, VMath::normalize(body->vel));
+	if (updot < cos(90) ){
+		body->vel.y = 0.0f;
+	}
+	else if (updot > cos(180)) {
+		body->vel.x *= -1;
+	}
+	else {
+		body->vel.y *= -1;
+	}
 
-	if (v1p - v2p > 0.0f) return;
 
-	float v1pnew = (((body->mass - e * rect->mass) * v1p) + ((1.0f + e) * rect->mass * v2p) / (body->mass + rect->mass));
 
-	body->vel += (v1pnew - v1p) * normalizedLineOfAction;
 }
