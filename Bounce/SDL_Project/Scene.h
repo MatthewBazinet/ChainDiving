@@ -7,7 +7,7 @@ public:
 	virtual void OnDestroy() = 0;
 	virtual void Update(const float time) = 0;
 	virtual void Render() = 0;
-	virtual void handleEvents(SDL_Event* sdlEvent) = 0;
+	virtual void handleEvents(const SDL_Event& event) = 0;
 };
 
 #endif

@@ -74,7 +74,7 @@ void GameManager::handleEvents() {
 			isRunning = false;
 		}
 		else {
-			//currentScene->handleEvents(sdlEvent);
+			currentScene->handleEvents(sdlEvent);
 		}
 	}
 }

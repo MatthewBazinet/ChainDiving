@@ -1,19 +1,2 @@
-﻿  Ball.cpp
-  Body.cpp
-C:\Users\matth\Documents\Git\ChainDiving\Bounce\SDL_Project\Body.cpp(52,26): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-  Collider.cpp
-  GameManager.cpp
-  Main.cpp
-  MMath.cpp
-  Platform.cpp
-C:\Users\matth\Documents\Git\ChainDiving\Bounce\SDL_Project\Body.cpp(61,20): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\matth\Documents\Git\ChainDiving\Bounce\SDL_Project\Platform.cpp(46,21): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
-  PlayerController.cpp
-  Scene0.cpp
-  Timer.cpp
-  VMath.cpp
-  Window.cpp
-  Generating Code...
-C:\Users\matth\Documents\Git\ChainDiving\Bounce\SDL_Project\Platform.cpp(47,22): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\matth\Documents\Git\ChainDiving\Bounce\SDL_Project\Collider.cpp(55): warning C4715:  'Collider::SphereBoxCollision': not all control paths return a value
+﻿  PlayerController.cpp
   SDL_Project.vcxproj -> C:\Users\matth\Documents\Git\ChainDiving\Bounce\Debug\SDL_Project.exe

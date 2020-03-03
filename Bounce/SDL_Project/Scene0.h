@@ -14,24 +14,24 @@ class Scene0 : public Scene {
 private:
 	SDL_Window *window;
 	SDL_Renderer* renderer;
-	Ball* ball[5];
+	Ball* ball[2];
 	Platform* platforms[5];
 	SDL_Surface* screenSurface;
 	SDL_Surface* ballImage;
 	Matrix4 projection;
 	float timePassed;
 	Collider* umer;
-	PlayerController pc;
+	PlayerController* pc;
 
 	
 public:
 	Scene0(SDL_Window* sdlWindow);
 	~Scene0();
-	bool OnCreate();
-	void OnDestroy();
-	void Update(const float time);
-	void Render();
-	void handleEvents(SDL_Event* sdlEvent);
+	bool OnCreate() override;
+	void OnDestroy() override;
+	void Update(const float time) override;
+	void Render() override;
+	void handleEvents(const SDL_Event& event) override;
 	
 };
 

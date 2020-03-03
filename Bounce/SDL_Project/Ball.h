@@ -6,6 +6,7 @@
 class Ball : public GameObject, public Body
 {
 	friend class Collider;
+	friend class PlayerController;
 public:
 	Ball();
 	Ball(Vec3 pos_, Vec3 vel_, Vec3 accel_, float mass_, float radius_, SDL_Surface* image);

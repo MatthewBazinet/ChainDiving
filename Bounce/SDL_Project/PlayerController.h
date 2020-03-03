@@ -2,19 +2,17 @@
 #define PLAYERCONTROLLER_H
 
 #include "Body.h"
+#include "Ball.h"
 #include "SDL.h"
 
 class PlayerController
 {
 public:
-	SDL_Event* event;
-	Body* body;
 
 	PlayerController();
 	~PlayerController();
 
-	void Update();
-	void HandleEvents();
+	void HandleEvents(const SDL_Event& event, Ball* body1, Ball* body2);
 };
 
 #endif // PLAYERCONTOLLER_H
