@@ -4,7 +4,7 @@
 
 
 Timer::Timer() {
-	prevTicks= 0;
+	prevTicks = 0;
 	currTicks = 0;
 }
 

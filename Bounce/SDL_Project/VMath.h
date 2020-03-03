@@ -1,3 +1,4 @@
+
 #ifndef VMATH_H
 #define VMATH_H
 #include <cmath>
@@ -7,21 +8,21 @@
 #include "Vector.h"
 
 namespace MATH {
-	
+
 	class VMath {
 
 	public:
 		/// Calculate the dot product between Vec3s a & b 
-		inline static float dot(const Vec3 &a, const Vec3 &b){
+		inline static float dot(const Vec3 &a, const Vec3 &b) {
 			return(a.x * b.x + a.y * b.y + a.z * b.z);
 		}
 
-		
+
 		/// Calulate the cross product
-		inline static const Vec3 cross(const Vec3 &a, const Vec3 &b){
+		inline static const Vec3 cross(const Vec3 &a, const Vec3 &b) {
 			return Vec3(a.y * b.z - a.z * b.y,
-						a.z * b.x - a.x * b.z,
-						a.x * b.y - a.y * b.x);
+				a.z * b.x - a.x * b.z,
+				a.x * b.y - a.y * b.x);
 		}
 
 		inline static float mag(const Vec3 &a) {
@@ -39,14 +40,14 @@ namespace MATH {
 
 		/// Return a normalized Vec3
 		static Vec3 normalize(const Vec3 &a);
-	
+
 		/// Reflect off a normal  
 		static Vec3 reflect(const Vec3 &v, const Vec3 &n);
 
 		/// Get the distance between two Vec3s 
 		static float distance(const Vec3 &a, const Vec3 &b);
 
-		
+
 
 		/// This is a basic Linear Interpolation function.  It takes v1 and moves it 
 		/// to v2 in a linear fashion based on the value of t which goes from 

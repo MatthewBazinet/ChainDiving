@@ -3,14 +3,14 @@
 #include <iostream> /// Umer likes this over printf() - too bad
 
 
-Window::Window(int width_, int height_){
+Window::Window(int width_, int height_) {
 	screenSurface = nullptr;
 	window = nullptr;
 	width = width_;
 	height = height_;
 }
 
-bool Window::OnCreate(){
+bool Window::OnCreate() {
 	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
 		std::cout << "SDL_Error: " << SDL_GetError() << std::endl;
 		return false;
@@ -31,23 +31,23 @@ bool Window::OnCreate(){
 	return true;
 }
 
-void Window::OnDestroy(){
+void Window::OnDestroy() {
 	/// Kill the surface first
 	if (screenSurface) {
 		SDL_FreeSurface(screenSurface);
 	}
 
 	/// Now kill the window
-	if (window){
+	if (window) {
 		SDL_DestroyWindow(window);
 	}
-	
+
 	///Exit the SDL subsystems
 	SDL_Quit();
 
 }
 
-Window::~Window(){}
+Window::~Window() {}
 
 SDL_Window* Window::GetSDL_Window() {
 	return window;

@@ -3,7 +3,7 @@
 
 Body::Body()
 {
-	Body(Vec3(0.0f,0.0f,0.0f), Vec3(0.0f, 0.0f, 0.0f), Vec3(0.0f, 0.0f, 0.0f), 0.0f);
+	Body(Vec3(0.0f, 0.0f, 0.0f), Vec3(0.0f, 0.0f, 0.0f), Vec3(0.0f, 0.0f, 0.0f), 0.0f);
 }
 
 Body::Body(Vec3 pos_, Vec3 vel_, Vec3 accel_, float mass_)
@@ -28,7 +28,7 @@ Body::~Body()
 
 void Body::Update(const float deltaTime)
 {
-	//printf("%f %f %f\n", pos.x, vel.x, accel.x);
+	printf("%f %f %f\n", pos.x, vel.x, accel.x);
 	pos.x += vel.x * deltaTime + 0.5f * accel.x * deltaTime * deltaTime;
 	vel.x += accel.x * deltaTime;
 	pos.y += vel.y * deltaTime + 0.5f * accel.y * deltaTime * deltaTime;
@@ -40,7 +40,7 @@ void Body::Update(const float deltaTime)
 
 void Body::Update(const float deltaTime, float timePassed)
 {
-	//printf("%f %f %f\n", pos.x, vel.x, accel.x);
+	printf("%f %f %f\n", pos.x, vel.x, accel.x);
 	pos.x += vel.x * deltaTime + 0.5f * accel.x * deltaTime * deltaTime;
 	vel.x += accel.x * deltaTime;
 	pos.y += vel.y * deltaTime + 0.5f * accel.y * deltaTime * deltaTime;
@@ -48,8 +48,8 @@ void Body::Update(const float deltaTime, float timePassed)
 	pos.z += vel.z * deltaTime + 0.5f * accel.z * deltaTime * deltaTime;
 	vel.z += accel.z * deltaTime;
 
-	if (pos.y < 4.0f && !bouncedY) {
-		vel =Vec3(vel.x, vel.y * -0.99f, 0.0f);
+	if (pos.y < 4 && !bouncedY) {
+		vel = Vec3(vel.x, vel.y * -0.99, 0.0f);
 		bouncedY = true;
 		hitTimeY = timePassed;
 	}
@@ -57,8 +57,8 @@ void Body::Update(const float deltaTime, float timePassed)
 		bouncedY = false;
 	}
 
-	if ((pos.x < 4.2f || pos.x > 45.8f) && !bouncedX) {
-		vel = Vec3(vel.x * -0.99f, vel.y, 0.0f);
+	if ((pos.x < 4.2 || pos.x > 45.8) && !bouncedX) {
+		vel = Vec3(vel.x * -0.99, vel.y, 0.0f);
 		bouncedX = true;
 		hitTimeX = timePassed;
 	}
@@ -75,11 +75,11 @@ void Body::ApplyForce(Vec3 force)
 	accel.z += force.z / mass;
 }
 
-Vec3 Body::GetPos() {
+Vec3 Body::GetPos() const {
 	return pos;
 }
 
-Vec3 Body::GetVel() {
+Vec3 Body::GetVel() const {
 	return vel;
 }
 

@@ -1,6 +1,2 @@
 ﻿  Scene0.cpp
-c:\users\aznri\onedrive\documents\github\chaindiving\bounce\sdl_project\scene0.cpp(92): warning C4477: 'printf' : format string '%f' requires an argument of type 'double', but variadic argument 1 has type 'MATH::Vec3'
-c:\users\aznri\onedrive\documents\github\chaindiving\bounce\sdl_project\scene0.cpp(92): warning C4473: 'printf' : not enough arguments passed for format string
-  c:\users\aznri\onedrive\documents\github\chaindiving\bounce\sdl_project\scene0.cpp(92): note: placeholders and their parameters expect 3 variadic arguments, but 1 were provided
-  c:\users\aznri\onedrive\documents\github\chaindiving\bounce\sdl_project\scene0.cpp(92): note: the missing variadic argument 2 is required by format string '%f'
   SDL_Project.vcxproj -> C:\Users\aznri\OneDrive\Documents\GitHub\ChainDiving\Bounce\Debug\SDL_Project.exe

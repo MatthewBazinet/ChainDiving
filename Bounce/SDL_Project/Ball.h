@@ -1,3 +1,4 @@
+
 #ifndef BALL_H
 #define BALL_H
 #include "GameObject.h"
@@ -17,8 +18,7 @@ public:
 	void Render()const;
 	void Render(SDL_Surface* screenSurface_, Matrix4 projection);
 	~Ball();
-	
-	
+
 private:
 	SDL_Surface* ballImage;
 	SDL_Surface* screenSurface;

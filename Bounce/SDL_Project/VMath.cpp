@@ -1,7 +1,7 @@
 #include "VMath.h"
 
 using namespace MATH;
- 
+
 /// Return a normalized Vec3
 Vec3 VMath::normalize(const Vec3 &a) {
 	float magnitude;
@@ -19,7 +19,7 @@ Vec3 VMath::normalize(const Vec3 &a) {
 	return result;
 }
 
-Vec3 VMath::reflect(const Vec3 &v, const Vec3 &n){
+Vec3 VMath::reflect(const Vec3 &v, const Vec3 &n) {
 	Vec3 result;
 	float scalar = 2.0f * dot(v, n);
 	Vec3 temp = n * scalar;
@@ -27,8 +27,8 @@ Vec3 VMath::reflect(const Vec3 &v, const Vec3 &n){
 	return result;
 }
 
-float VMath::distance(const Vec3 &a, const Vec3 &b){
-	Vec3 r  = a - b;
+float VMath::distance(const Vec3 &a, const Vec3 &b) {
+	Vec3 r = a - b;
 	return(mag(r));
 }
 

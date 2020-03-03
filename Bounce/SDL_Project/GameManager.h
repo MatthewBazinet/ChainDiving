@@ -2,9 +2,6 @@
 #define GAMEMANAGER_H
 #include <SDL.h>
 #include "Scene.h"
-#include "InputManager.h"
-#include "Ball.h"
-#include "Scene0.h"
 
 class GameManager {
 private:
@@ -21,10 +18,6 @@ private:
 	class Timer *timer;
 	bool isRunning;
 	Scene *currentScene;
-	SDL_Event mEvents;
-
-	InputManager* mInputMgr;
-	Ball* ball[5]; //If I use a pointer it will cause a crash. 
 
 public:
 	GameManager();
@@ -35,5 +28,3 @@ public:
 	void Run();
 };
 #endif
-
-

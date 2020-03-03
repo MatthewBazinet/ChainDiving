@@ -19,8 +19,8 @@ public:
 	void Update(const float deltaTime);
 	void Update(const float deltaTime, float timePassed);
 	void ApplyForce(Vec3 force);
-	Vec3 GetPos();
-	Vec3 GetVel();
+	Vec3 GetPos() const;
+	Vec3 GetVel() const;
 	void SetVel(Vec3 vel_);
 	~Body();
 };
