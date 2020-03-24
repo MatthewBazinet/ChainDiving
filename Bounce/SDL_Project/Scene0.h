@@ -9,11 +9,14 @@
 #include "PlayerController.h"
 #include "Platform.h"
 
+class Camera;
+
 using namespace MATH;
 class Scene0 : public Scene {
 private:
 	SDL_Window *window;
 	SDL_Renderer* renderer;
+	Camera *camera;
 	Ball* ball[5];
 	Platform* platforms[5];
 	Platform* killBorder[5];
