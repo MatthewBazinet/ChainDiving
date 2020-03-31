@@ -75,11 +75,11 @@ void Body::ApplyForce(Vec3 force)
 	accel.z += force.z / mass;
 }
 
-Vec3 Body::GetPos() {
+Vec3 Body::GetPos() const{
 	return pos;
 }
 
-Vec3 Body::GetVel() {
+Vec3 Body::GetVel() const{
 	return vel;
 }
 

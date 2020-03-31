@@ -34,3 +34,40 @@ void Collider::SphereSphereCollisionResponse(Body* body1, Body* body2)
 	body1->vel += (v1pnew - v1p) * normalizedLineOfAction;
 	body2->vel += (v2pnew - v2p) * normalizedLineOfAction;
 }
+
+bool Collider::SphereBoxCollision(const Platform* rect, const Body* body)
+{
+	Vec3 distance;
+		distance.x = abs(body->GetPos().x - (rect->GetPos().x + rect->width/2));  // circle is x away from rect center on horizontal axis
+		distance.y = abs(body->GetPos().y - (rect->GetPos().y - rect->height/2));  // circle is y away from rect center on verticle axis
+		if (distance.x > (rect->width / 2 + body->radius)) { return false; } // too far on x axis
+		if (distance.y > (rect->height / 2 + body->radius)) { return false; } // too far on y axis
+
+		if (distance.x <= (rect->width / 2)) { return true; }
+		if (distance.y <= (rect->height / 2)) { return true; }
+
+		float cDist_sq = pow(distance.x - rect->width / 2 , 2) + pow(distance.y - rect->height / 2,2);
+
+		if (cDist_sq <= (body->radius*body->radius)) {
+				//collision detected
+				return true;
+		}
+}
+
+void Collider::SphereBoxCollisionResponse(Platform* rect, Body* body)
+{
+	Vec3 up = Vec3(0.0f, 1.0f, 0.0f);
+	float updot = VMath::dot(up, VMath::normalize(body->vel));
+	if (updot < cos(90) ){
+		body->vel.y = 0.0f;
+	}
+	else if (updot > cos(180)) {
+		body->vel.x *= -1;
+	}
+	else {
+		body->vel.y *= -1;
+	}
+
+
+
+}
